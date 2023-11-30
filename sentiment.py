@@ -15,8 +15,10 @@ df = pd.read_csv("train.csv", encoding='latin1')
 # Removing the unwanted data
 df.drop(df[df['sentiment'] == "neutral"].index, inplace=True)
 
-# Downloading the stopwords
+# Downloading the stopwords, punkt, wordnet
 nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
 
 # Instantiate tokenizer, stemmer,stopwords, and WordNetLemmatizer
 tokenizer = RegexpTokenizer(r'\w+')
